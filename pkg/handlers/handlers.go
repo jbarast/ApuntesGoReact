@@ -1,5 +1,7 @@
 package handlers
 import(
+	"PaginaWebGoReact/pkg/middlew"
+	"PaginaWebGoReact/pkg/routers"
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 	"log"
@@ -9,6 +11,9 @@ import(
 
 func Manejadores(){
 	router := mux.NewRouter()
+
+	// Router.
+	router.HandleFunc("/registro",middlew.ChequeoDB(routers.Registro)).Methods("POST")
 
 	// Miro si hay una variable de entorno PORT.
 	PORT := os.Getenv("PORT")
