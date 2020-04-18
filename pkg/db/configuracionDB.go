@@ -1,4 +1,4 @@
 package db
 
 const TiempoTimeoutSegundos = 15
-const NombreBaseDatos = "twittor"
+const NombreBaseDatos = "Twittor"
