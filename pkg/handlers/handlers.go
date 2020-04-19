@@ -14,6 +14,7 @@ func Manejadores(){
 
 	// Router.
 	router.HandleFunc("/registro",middlew.ChequeoDB(routers.Registro)).Methods("POST")
+	router.HandleFunc("/login",middlew.ChequeoDB(routers.Login)).Methods("POST")
 
 	// Miro si hay una variable de entorno PORT.
 	PORT := os.Getenv("PORT")
