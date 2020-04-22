@@ -15,6 +15,7 @@ func Manejadores(){
 	// Router.
 	router.HandleFunc("/registro",middlew.ChequeoDB(routers.Registro)).Methods("POST")
 	router.HandleFunc("/login",middlew.ChequeoDB(routers.Login)).Methods("POST")
+	router.HandleFunc("/verperfil",middlew.ChequeoDB(middlew.ValidoJWT(routers.VerPerfil))).Methods("GET")
 
 	// Miro si hay una variable de entorno PORT.
 	PORT := os.Getenv("PORT")
